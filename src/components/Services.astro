@@ -158,9 +158,7 @@ import 'swiper/css/pagination';
 
 <!-- 🔥 TODO EL JS AQUÍ -->
 <script client:load>
-  const loadSwiper = async () => {
-    const Swiper = (await import('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.esm.browser.min.js')).default;
-
+  const init = () => {
     const swiper = new Swiper('.servicesSwiper', {
       loop: true,
       centeredSlides: true,
@@ -196,5 +194,10 @@ import 'swiper/css/pagination';
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   };
 
-  loadSwiper();
+  // asegurar que Swiper cargó
+  if (typeof Swiper !== "undefined") {
+    init();
+  } else {
+    window.addEventListener("load", init);
+  }
 </script>
