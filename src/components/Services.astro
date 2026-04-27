@@ -1,0 +1,173 @@
+---
+import 'swiper/css';
+import 'swiper/css/pagination';
+---
+
+<section id="servicios" class="services" >
+  <div class="container">
+
+    <div class="header fade-in">
+      <h2>Nuestros servicios</h2>
+      <p>Soluciones de transporte y logística adaptadas a tus necesidades</p>
+    </div>
+
+    <div class="swiper servicesSwiper fade-in">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="/entregas.jpeg" alt="Transporte de carga" />
+            <h3>Transporte de carga</h3>
+            <p>Traslado seguro y puntual de mercancías.</p>
+            <a href="/#cotizar">Cotizar</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="/almacenamiento.jpg" alt="Transporte de carga" />
+            <h3>Almacenamiento de carga</h3>
+            <p>Optimización de procesos logísticos.</p>
+            <a href="/#cotizar">Cotizar</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="/retiros.jpg" alt="Transporte de carga" />
+            <h3>Retiros de puerto</h3>
+            <p>Entrega eficiente en múltiples destinos.</p>
+            <a href="/#cotizar">Cotizar</a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="card">
+            <img src="/desconsolidado.jpeg" alt="Transporte de carga" />
+            <h3>Desconsolidado</h3>
+            <p>Espacios seguros para tu carga.</p>
+            <a href="/#cotizar">Cotizar</a>
+          </div>
+        </div>
+
+                <div class="swiper-slide">
+          <div class="card">
+            <img src="/vacios.jpg" alt="Transporte de carga" />
+            <h3>Devolucion y retiro de vacios</h3>
+            <p>Espacios seguros para tu carga.</p>
+            <a href="/#cotizar">Cotizar</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: 40px 20px;
+    background: #f9fafb;
+    overflow: hidden;
+  }
+
+  #servicios {
+  scroll-margin-top: 80px;
+}
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .header p {
+    color: #555;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .swiper {
+    padding-bottom: 60px;
+  }
+
+  .swiper-slide {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+
+  .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .card h3 {
+    margin: 15px;
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    margin: 0 15px 15px;
+    color: #555;
+    font-size: 0.9rem;
+  }
+
+  .card a {
+    display: block;
+    margin: 0 15px 20px;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  .swiper-pagination-bullet {
+    background: #bbb;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #111;
+  }
+</style>
+
+<script type="module" client:load>
+  import { initServicesSwiper } from '../src/scripts/servicesSwiper.js';
+  initServicesSwiper();
+</script>

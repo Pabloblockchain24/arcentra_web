@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsappButton.astro";
+
+const { title = "Arcentra" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{title}</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Transporte de carga en San Antonio. Retiro en puerto, distribución y logística eficiente para empresas." />
+  <meta name="keywords" content="transporte de carga, San Antonio, retiro en puerto, logística, transporte Chile" />
+  <meta name="author" content="Arcentra" />
+
+  <!-- Open Graph (para compartir en WhatsApp y redes) -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content="Servicios de transporte de carga y logística en San Antonio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://arcentra.cl" />
+  <meta property="og:image" content="/images/preview.jpg" />
+  <meta name="geo.region" content="CL-VS" />
+<meta name="geo.placename" content="San Antonio" />
+<meta name="geo.position" content="-33.5935;-71.6217" />
+
+  <!-- Favicon (después lo agregamos) -->
+  <link rel="icon" href="/favicon_arcentra.png" />
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Space+Grotesk:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+  <body>
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+  </body>
+</html>

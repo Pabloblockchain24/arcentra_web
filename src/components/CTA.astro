@@ -1,0 +1,122 @@
+<section id="cotizar" class="contact">
+  <div class="container">
+
+    <div class="header">
+      <h2>Solicita tu transporte</h2>
+      <p>Cuéntanos tu necesidad y te responderemos a la brevedad</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- FORMULARIO -->
+      <form class="form">
+        <input type="text" placeholder="Nombre" required />
+        <input type="email" placeholder="Email" required />
+        <input type="text" placeholder="Teléfono" />
+        <textarea placeholder="Detalles del servicio" rows="4"></textarea>
+
+        <button type="submit">Enviar solicitud</button>
+      </form>
+
+      <!-- CONTACTO DIRECTO -->
+      <div class="info">
+        <h3>Contacto directo</h3>
+
+        <a href="https://wa.me/56950727028" target="_blank" class="whatsapp">
+          💬 WhatsApp
+        </a>
+
+        <p>📞 +56 9 5072 7028</p>
+        <p>✉️ pabloarce@arcentra.cl</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 80px 20px;
+    background: #fff;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .header p {
+    color: #555;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  /* FORM */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form input,
+  .form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+  }
+
+  .form button {
+    background: #111;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* INFO */
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .info h3 {
+    margin-bottom: 10px;
+  }
+
+  .whatsapp {
+    background: #25D366;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  /* 📱 Responsive */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

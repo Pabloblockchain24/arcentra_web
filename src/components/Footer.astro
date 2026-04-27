@@ -1,0 +1,120 @@
+<footer class="footer">
+  <div class="container">
+
+    <div class="grid">
+
+      <!-- MARCA -->
+      <div class="col">
+        <img src="/Arcentralogo_nav.png" alt="Arcentra" class="logo" />
+        <p>
+          Más de 37 años brindando soluciones en transporte y logística.
+          Seguridad, puntualidad y control en cada operación.
+        </p>
+      </div>
+
+      <!-- SERVICIOS -->
+      <div class="col">
+        <h4>Servicios</h4>
+        <a href="#servicios">Transporte de carga DRY</a>
+        <a href="#servicios">Transporte Reefer</a>
+        <a href="#servicios">Retiro de puerto</a>
+        <a href="#servicios">Almacenaje</a>
+        <a href="#servicios">Desconsolidado</a>
+      </div>
+
+      <!-- CONTACTO -->
+      <div class="col">
+        <h4>Contacto</h4>
+        <p>📞 +56 9 50720 7028</p>
+        <p>✉️ pabloarce@arcentra.cl</p>
+        <p>📍 Blanco Encalada 750, San Antonio</p>
+
+        <a href="https://wa.me/56950727028" target="_blank" class="whatsapp">
+          WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <div class="bottom">
+      <p>© 2026 Arcentra. Todos los derechos reservados.</p>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #111;
+    color: #ddd;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo {
+    width: 220px;
+    height: auto;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .col h4 {
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .col a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+
+  .col a:hover {
+    color: white;
+  }
+
+  .whatsapp {
+    margin-top: 10px;
+    background: #25D366;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    width: fit-content;
+    font-size: 0.9rem;
+  }
+
+  .bottom {
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  /* 📱 Responsive */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+</style>
