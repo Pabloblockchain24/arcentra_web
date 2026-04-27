@@ -1,7 +1,3 @@
----
-import Swiper from 'swiper';
----
-
 <section id="servicios" class="services">
   <div class="container">
 
@@ -158,7 +154,9 @@ import Swiper from 'swiper';
 <!-- 🔥 TODO EL JS AQUÍ -->
 <script client:load>
   const init = () => {
-    const swiper = new Swiper('.servicesSwiper', {
+    if (typeof Swiper === "undefined") return;
+
+    new Swiper('.servicesSwiper', {
       loop: true,
       centeredSlides: true,
       spaceBetween: 30,
@@ -193,10 +191,6 @@ import Swiper from 'swiper';
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   };
 
-  // asegurar que Swiper cargó
-  if (typeof Swiper !== "undefined") {
-    init();
-  } else {
-    window.addEventListener("load", init);
-  }
+  // 🔥 esperar a que TODO cargue (clave en Astro)
+  window.addEventListener("load", init);
 </script>
