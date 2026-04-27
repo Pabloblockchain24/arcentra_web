@@ -1,196 +1,339 @@
 <section id="servicios" class="services">
   <div class="container">
 
-    <div class="header fade-in">
+    <div class="header">
       <h2>Nuestros servicios</h2>
-      <p>Soluciones de transporte y logística adaptadas a tus necesidades</p>
+      <p>Soluciones logísticas diseñadas para que tu operación nunca se detenga.</p>
     </div>
 
-    <div class="swiper servicesSwiper fade-in">
-      <div class="swiper-wrapper">
+    <div class="carousel" id="carousel">
+      <div class="track" id="track">
 
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="/entregas.jpeg" />
+        <!-- CARD -->
+        <div class="card">
+          <img src="/entregas.jpeg" />
+          <div class="content">
             <h3>Transporte de carga</h3>
-            <p>Traslado seguro y puntual de mercancías.</p>
-            <a href="/#cotizar">Cotizar</a>
+            <p>Movilizamos tu carga con puntualidad, seguridad y monitoreo en tiempo real.</p>
+            <a href="/#cotizar" class="cta">Cotizar transporte →</a>
           </div>
         </div>
 
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="/almacenamiento.jpg" />
-            <h3>Almacenamiento de carga</h3>
-            <p>Optimización de procesos logísticos.</p>
-            <a href="/#cotizar">Cotizar</a>
+        <div class="card">
+          <img src="/almacenamiento.jpg" />
+          <div class="content">
+            <h3>Almacenamiento</h3>
+            <p>Más de 10.000 m² para resguardar tu carga con control y seguridad total.</p>
+            <a href="/#cotizar" class="cta">Solicitar espacio →</a>
           </div>
         </div>
 
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="/retiros.jpg" />
-            <h3>Retiros de puerto</h3>
-            <p>Entrega eficiente en múltiples destinos.</p>
-            <a href="/#cotizar">Cotizar</a>
+        <div class="card">
+          <img src="/retiros.jpg" />
+          <div class="content">
+            <h3>Retiros en puerto</h3>
+            <p>Coordinación eficiente para retirar contenedores sin demoras.</p>
+            <a href="/#cotizar" class="cta">Coordinar retiro →</a>
           </div>
         </div>
 
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="/desconsolidado.jpeg" />
+        <div class="card">
+          <img src="/desconsolidado.jpeg" />
+          <div class="content">
             <h3>Desconsolidado</h3>
-            <p>Espacios seguros para tu carga.</p>
-            <a href="/#cotizar">Cotizar</a>
+            <p>Gestión precisa de carga consolidada para optimizar tiempos.</p>
+            <a href="/#cotizar" class="cta">Solicitar servicio →</a>
           </div>
         </div>
 
-        <div class="swiper-slide">
-          <div class="card">
-            <img src="/vacios.jpg" />
-            <h3>Devolución y retiro de vacíos</h3>
-            <p>Gestión eficiente de contenedores.</p>
-            <a href="/#cotizar">Cotizar</a>
+        <div class="card">
+          <img src="/vacios.jpg" />
+          <div class="content">
+            <h3>Gestión de vacíos</h3>
+            <p>Retiro y devolución de contenedores reduciendo costos operativos.</p>
+            <a href="/#cotizar" class="cta">Gestionar vacíos →</a>
+          </div>
+        </div>
+
+        <!-- DUPLICADO (loop) -->
+        <!-- copia exactamente las mismas 5 cards -->
+        
+        <div class="card">
+          <img src="/entregas.jpeg" />
+          <div class="content">
+            <h3>Transporte de carga</h3>
+            <p>Movilizamos tu carga con puntualidad, seguridad y monitoreo en tiempo real.</p>
+            <a href="/#cotizar" class="cta">Cotizar transporte →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/almacenamiento.jpg" />
+          <div class="content">
+            <h3>Almacenamiento</h3>
+            <p>Más de 10.000 m² para resguardar tu carga con control y seguridad total.</p>
+            <a href="/#cotizar" class="cta">Solicitar espacio →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/retiros.jpg" />
+          <div class="content">
+            <h3>Retiros en puerto</h3>
+            <p>Coordinación eficiente para retirar contenedores sin demoras.</p>
+            <a href="/#cotizar" class="cta">Coordinar retiro →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/desconsolidado.jpeg" />
+          <div class="content">
+            <h3>Desconsolidado</h3>
+            <p>Gestión precisa de carga consolidada para optimizar tiempos.</p>
+            <a href="/#cotizar" class="cta">Solicitar servicio →</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="/vacios.jpg" />
+          <div class="content">
+            <h3>Gestión de vacíos</h3>
+            <p>Retiro y devolución de contenedores reduciendo costos operativos.</p>
+            <a href="/#cotizar" class="cta">Gestionar vacíos →</a>
           </div>
         </div>
 
       </div>
-
-      <div class="swiper-pagination"></div>
     </div>
+
+    <div class="dots" id="dots"></div>
 
   </div>
 </section>
 
 <style>
-  .services {
-    padding: 40px 20px;
-    background: #f9fafb;
-  }
+.services {
+  padding: 80px 20px;
+  background: #f9fafb;
+}
 
-  #servicios {
-    scroll-margin-top: 80px;
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
 
-  .header {
-    text-align: center;
-    margin-bottom: 50px;
-  }
+/* SCROLL */
+.carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* 🔥 iOS smooth */
+  cursor: grab;
+}
 
-  .fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-  }
+.carousel:active {
+  cursor: grabbing;
+}
 
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* TRACK */
+.track {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
 
-  .swiper {
-    padding-bottom: 60px;
-  }
+/* CARD */
+.card {
+  flex: 0 0 80%;
+  max-width: 320px;
+  scroll-snap-align: center;
 
-  .swiper-slide {
-    opacity: 0.4;
-    transform: scale(0.9);
-    transition: all 0.4s ease;
-  }
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
 
-  .swiper-slide-active {
-    opacity: 1;
-    transform: scale(1);
-  }
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0.4;
+  transform: scale(0.9);
+  filter: blur(2px);
+}
 
-  .card {
-    background: white;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  }
+.card.active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
 
-  .card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-  .card h3 {
-    margin: 15px;
-  }
+/* CONTENT */
+.content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-  .card p {
-    margin: 0 15px 15px;
-    color: #555;
-    font-size: 0.9rem;
-  }
+.content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
 
-  .card a {
-    display: block;
-    margin: 0 15px 20px;
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: 6px;
-    text-decoration: none;
-  }
+.content p {
+  font-size: 0.9rem;
+  color: #555;
+  flex-grow: 1;
+}
 
-  .swiper-pagination-bullet {
-    background: #bbb;
-  }
+/* CTA */
+.cta {
+  margin-top: 15px;
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
 
-  .swiper-pagination-bullet-active {
-    background: #111;
-  }
+.cta:hover {
+  transform: translateY(-2px);
+  background: black;
+}
+
+/* DOTS */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+.dot.active {
+  width: 20px;
+  background: #111;
+}
 </style>
 
-<!-- 🔥 TODO EL JS AQUÍ -->
 <script client:load>
-  const init = () => {
-    if (typeof Swiper === "undefined") return;
+const slider = document.getElementById("carousel");
+const track = document.getElementById("track");
+const cards = track.querySelectorAll(".card");
+const dotsContainer = document.getElementById("dots");
 
-    new Swiper('.servicesSwiper', {
-      loop: true,
-      centeredSlides: true,
-      spaceBetween: 30,
-      slidesPerView: 1.2,
-      grabCursor: true,
+const total = cards.length / 2;
+let index = 0;
+let isHovering = false;
 
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
+/* DRAG SCROLL (🔥 clave UX) */
+let isDown = false;
+let startX;
+let scrollLeft;
 
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+slider.addEventListener("mousedown", (e) => {
+  isDown = true;
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
 
-      breakpoints: {
-        768: { slidesPerView: 2.2 },
-        1024: { slidesPerView: 2.8 }
-      }
-    });
+slider.addEventListener("mouseleave", () => isDown = false);
+slider.addEventListener("mouseup", () => isDown = false);
 
-    // animación scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
+slider.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  slider.scrollLeft = scrollLeft - walk;
+});
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+/* DOTS */
+for (let i = 0; i < total; i++) {
+  const dot = document.createElement("div");
+  dot.classList.add("dot");
+  dotsContainer.appendChild(dot);
+
+  dot.onclick = () => {
+    index = i;
+    scrollToCard(index);
   };
+}
 
-  // 🔥 esperar a que TODO cargue (clave en Astro)
-  window.addEventListener("load", init);
+const dots = dotsContainer.querySelectorAll(".dot");
+
+/* SCROLL */
+const scrollToCard = (i) => {
+  const card = cards[i];
+  const center = slider.offsetWidth / 2;
+  const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+
+  slider.scrollTo({
+    left: cardCenter - center,
+    behavior: "smooth"
+  });
+};
+
+/* UPDATE */
+const update = () => {
+  let closest = 0;
+  let min = Infinity;
+
+  cards.forEach((card, i) => {
+    const rect = card.getBoundingClientRect();
+    const offset = Math.abs(window.innerWidth / 2 - (rect.left + rect.width / 2));
+
+    if (offset < min) {
+      min = offset;
+      closest = i;
+    }
+  });
+
+  cards.forEach(c => c.classList.remove("active"));
+  cards[closest].classList.add("active");
+
+  const realIndex = closest % total;
+  dots.forEach(d => d.classList.remove("active"));
+  dots[realIndex].classList.add("active");
+
+  /* LOOP */
+  if (closest >= total) {
+    slider.scrollLeft -= track.scrollWidth / 2;
+    index = closest - total;
+  }
+};
+
+/* AUTOPLAY */
+const autoplay = () => {
+  if (isHovering) return;
+  index++;
+  scrollToCard(index);
+};
+
+slider.addEventListener("mouseenter", () => isHovering = true);
+slider.addEventListener("mouseleave", () => isHovering = false);
+slider.addEventListener("scroll", update);
+
+window.addEventListener("load", () => {
+  scrollToCard(index);
+  update();
+  setInterval(autoplay, 3500);
+});
 </script>
