@@ -157,42 +157,44 @@ import 'swiper/css/pagination';
 </style>
 
 <!-- 🔥 TODO EL JS AQUÍ -->
-<script type="module" client:load>
-  import Swiper from 'swiper';
-  import { Pagination, Autoplay } from 'swiper/modules';
+<script client:load>
+  const loadSwiper = async () => {
+    const Swiper = (await import('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.esm.browser.min.js')).default;
 
-  const swiper = new Swiper('.servicesSwiper', {
-    modules: [Pagination, Autoplay],
-    loop: true,
-    centeredSlides: true,
-    spaceBetween: 30,
-    slidesPerView: 1.2,
-    grabCursor: true,
+    const swiper = new Swiper('.servicesSwiper', {
+      loop: true,
+      centeredSlides: true,
+      spaceBetween: 30,
+      slidesPerView: 1.2,
+      grabCursor: true,
 
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
 
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
 
-    breakpoints: {
-      768: { slidesPerView: 2.2 },
-      1024: { slidesPerView: 2.8 }
-    }
-  });
-
-  // Animación scroll
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+      breakpoints: {
+        768: { slidesPerView: 2.2 },
+        1024: { slidesPerView: 2.8 }
       }
     });
-  });
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    // animación scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  };
+
+  loadSwiper();
 </script>
