@@ -3,7 +3,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 ---
 
-<section id="servicios" class="services" >
+<section id="servicios" class="services">
   <div class="container">
 
     <div class="header fade-in">
@@ -16,7 +16,7 @@ import 'swiper/css/pagination';
 
         <div class="swiper-slide">
           <div class="card">
-            <img src="/entregas.jpeg" alt="Transporte de carga" />
+            <img src="/entregas.jpeg" />
             <h3>Transporte de carga</h3>
             <p>Traslado seguro y puntual de mercancías.</p>
             <a href="/#cotizar">Cotizar</a>
@@ -25,7 +25,7 @@ import 'swiper/css/pagination';
 
         <div class="swiper-slide">
           <div class="card">
-            <img src="/almacenamiento.jpg" alt="Transporte de carga" />
+            <img src="/almacenamiento.jpg" />
             <h3>Almacenamiento de carga</h3>
             <p>Optimización de procesos logísticos.</p>
             <a href="/#cotizar">Cotizar</a>
@@ -34,7 +34,7 @@ import 'swiper/css/pagination';
 
         <div class="swiper-slide">
           <div class="card">
-            <img src="/retiros.jpg" alt="Transporte de carga" />
+            <img src="/retiros.jpg" />
             <h3>Retiros de puerto</h3>
             <p>Entrega eficiente en múltiples destinos.</p>
             <a href="/#cotizar">Cotizar</a>
@@ -43,18 +43,18 @@ import 'swiper/css/pagination';
 
         <div class="swiper-slide">
           <div class="card">
-            <img src="/desconsolidado.jpeg" alt="Transporte de carga" />
+            <img src="/desconsolidado.jpeg" />
             <h3>Desconsolidado</h3>
             <p>Espacios seguros para tu carga.</p>
             <a href="/#cotizar">Cotizar</a>
           </div>
         </div>
 
-                <div class="swiper-slide">
+        <div class="swiper-slide">
           <div class="card">
-            <img src="/vacios.jpg" alt="Transporte de carga" />
-            <h3>Devolucion y retiro de vacios</h3>
-            <p>Espacios seguros para tu carga.</p>
+            <img src="/vacios.jpg" />
+            <h3>Devolución y retiro de vacíos</h3>
+            <p>Gestión eficiente de contenedores.</p>
             <a href="/#cotizar">Cotizar</a>
           </div>
         </div>
@@ -71,12 +71,11 @@ import 'swiper/css/pagination';
   .services {
     padding: 40px 20px;
     background: #f9fafb;
-    overflow: hidden;
   }
 
   #servicios {
-  scroll-margin-top: 80px;
-}
+    scroll-margin-top: 80px;
+  }
 
   .container {
     max-width: 1100px;
@@ -86,15 +85,6 @@ import 'swiper/css/pagination';
   .header {
     text-align: center;
     margin-bottom: 50px;
-  }
-
-  .header h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-
-  .header p {
-    color: #555;
   }
 
   .fade-in {
@@ -113,9 +103,9 @@ import 'swiper/css/pagination';
   }
 
   .swiper-slide {
-    transition: transform 0.4s ease, opacity 0.4s ease;
     opacity: 0.4;
     transform: scale(0.9);
+    transition: all 0.4s ease;
   }
 
   .swiper-slide-active {
@@ -138,7 +128,6 @@ import 'swiper/css/pagination';
 
   .card h3 {
     margin: 15px;
-    font-size: 1.1rem;
   }
 
   .card p {
@@ -167,7 +156,43 @@ import 'swiper/css/pagination';
   }
 </style>
 
+<!-- 🔥 TODO EL JS AQUÍ -->
 <script type="module" client:load>
-  import { initServicesSwiper } from '/src/scripts/servicesSwiper.js';
-  initServicesSwiper();
+  import Swiper from 'swiper';
+  import { Pagination, Autoplay } from 'swiper/modules';
+
+  const swiper = new Swiper('.servicesSwiper', {
+    modules: [Pagination, Autoplay],
+    loop: true,
+    centeredSlides: true,
+    spaceBetween: 30,
+    slidesPerView: 1.2,
+    grabCursor: true,
+
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    breakpoints: {
+      768: { slidesPerView: 2.2 },
+      1024: { slidesPerView: 2.8 }
+    }
+  });
+
+  // Animación scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
