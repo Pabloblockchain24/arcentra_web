@@ -103,6 +103,15 @@
           </div>
         </div>
 
+                <div class="card">
+          <img src="/reefer.jpg" />
+          <div class="content">
+            <h3>Servicios Reefer</h3>
+            <p>Contamos con equipo especializado de transporte y almacenaje.</p>
+            <a href="/#cotizar" class="cta">Cotizar</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -114,7 +123,8 @@
 <style>
 .services {
   padding: 80px 20px;
-  background: #f9fafb;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
@@ -125,11 +135,21 @@
 .header {
   text-align: center;
   margin-bottom: 50px;
+  
+  h2{
+    margin-bottom: 0.5rem;
+    font-size: 1.9rem;
+    color: white;
+  }
+
+  p{
+    color: white
+  }
 }
 
 /* SCROLL */
 .carousel {
-  overflow-x: auto;
+  overflow-x: hidden ;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; /* 🔥 iOS smooth */
@@ -152,11 +172,8 @@
   flex: 0 0 80%;
   max-width: 320px;
   scroll-snap-align: center;
-
   background: white;
-  border-radius: 16px;
   overflow: hidden;
-
   transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   opacity: 0.4;
   transform: scale(0.9);

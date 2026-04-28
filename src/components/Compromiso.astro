@@ -79,7 +79,7 @@
   }
 
   .header h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   /* WRAPPER */
@@ -95,6 +95,8 @@
     display: flex;
     flex-direction: column;
     border-left: 2px solid #eee;
+      overflow-x: hidden;
+
   }
 
   .item {
@@ -119,7 +121,7 @@
   }
 
   .item:hover {
-    background: #f1af2052;
+    background: #facc15;
     font-weight: 700 !important;
   }
 
@@ -262,21 +264,23 @@
 
     .sidebar {
       flex-direction: row;
-      overflow-x: auto;
+      overflow-x: hidden;
       border-left: none;
       border-bottom: 2px solid #eee;
     }
 
     .item {
       white-space: nowrap;
+      font-size: 0.8rem;
     }
 
     .item::before {
       display: none;
     }
 
+
     .content-box {
-      margin-top: 20px;
+      margin-top: 0px;
     }
 
     .content p {
