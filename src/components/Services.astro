@@ -104,7 +104,7 @@
         </div>
 
                 <div class="card">
-          <img src="/reefer.jpg" />
+          <img src="/Reefer.png" />
           <div class="content">
             <h3>Servicios Reefer</h3>
             <p>Contamos con equipo especializado de transporte y almacenaje.</p>
@@ -149,11 +149,22 @@
 
 /* SCROLL */
 .carousel {
-  overflow-x: hidden ;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch; /* 🔥 iOS smooth */
   cursor: grab;
+    touch-action: pan-x;
+
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .carousel:active {
@@ -165,6 +176,7 @@
   display: flex;
   gap: 20px;
   padding: 20px;
+  width: max-content; /* 🔥 importante */
 }
 
 /* CARD */
