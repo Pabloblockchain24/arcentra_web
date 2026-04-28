@@ -1,41 +1,61 @@
 <section class="why">
   <div class="container">
     <div class="header">
-      <h2>¿Por qué confiar en Arcentra?</h2>
+      <h2>¿Por qué Arcentra?</h2>
     </div>
 
-    <div class="grid">
-      <div class="card">
-        <div class="card-container">
-          <div class="icon">📍</div>
-          <h3>Control total de tu carga</h3>
-        </div>
-        <p>
-          Sigue el estado de tus envíos en tiempo real desde nuestro portal, con
-          monitoreo GPS en cada etapa.
-        </p>
+    <div class="why-wrapper">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="item active">Control total de tu carga</div>
+        <div class="item">Capacidad operativa</div>
+        <div class="item">Experiencia</div>
+        <div class="item">Atención personalizada</div>
       </div>
 
-      <div class="card">
-        <div class="card-container">
-          <div class="icon">🚛</div>
-          <h3>Capacidad operativa</h3>
+      <!-- PANEL -->
+      <div class="content-box">
+        <div class="content active">
+          <div class="icon">
+            <img src="/icon/map-pin-check.png" alt="location" />
+          </div>
+          <p>
+            Sigue el estado de tu carga en tiempo real desde nuestro Portal
+            Arcentra, con monitoreo GPS en cada etapa.
+          </p>
         </div>
-        <p>
-          Flota de más de 20 camiones y depósito de más de 10.000 m² para
-          responder cuando lo necesites.
-        </p>
-      </div>
 
-      <div class="card">
-        <div class="card-container">
-          <div class="icon">🏆</div>
-          <h3>37 años en L&T</h3>
+        <div class="content">
+          <div class="icon">
+            <img src="/icon/truck.png" alt="truck" />
+          </div>
+
+          <p>
+            Flota de más de 20 camiones y depósito de más de 10.000 m² para
+            responder cuando lo necesites. En 2025 hicimos +1000 operaciones
+            logísticas.
+          </p>
         </div>
-        <p>
-          Décadas de experiencia que garantizan operaciones seguras, eficientes
-          y sin improvisaciones.
-        </p>
+
+        <div class="content">
+          <div class="icon">
+            <img src="/icon/shield-check.png" alt="warehouse" />
+          </div>
+
+          <p>
+            +32 años de experiencia en logística y transporte recorriendo Chile
+            con nuestro equipo de experto.
+          </p>
+        </div>
+
+        <div class="content">
+          <div class="icon">
+            <img src="/icon/phone-call.png" alt="phone" />
+          </div>
+          <p>
+            Atención personalizada 24/7, 365 dias. 
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -43,9 +63,9 @@
 
 <style>
   .why {
-    padding: 40px 20px;
+    padding: 1rem 0 3rem 0;
     background: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 
   .container {
@@ -55,71 +75,219 @@
 
   .header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 3rem;
   }
 
   .header h2 {
     font-size: 2rem;
-    margin-bottom: 10px;
   }
 
-  .header p {
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .grid {
+  /* WRAPPER */
+  .why-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: 1fr 2fr;
+    align-items: stretch;
   }
 
-  .card {
-    background: grey;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  /* SIDEBAR */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid #eee;
+  }
+
+  .item {
+    padding: 16px;
+    cursor: pointer;
+    background: transparent;
+    position: relative;
+    transition: all 0.25s ease;
+    font-weight: 400;
+  }
+
+  /* 🔥 indicador lateral */
+  .item::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .item:hover {
+    background: #f1af2052;
+    font-weight: 700 !important;
+  }
+
+  .item.active {
+    color: #111;
+    font-weight: 600;
+  }
+
+  .item.active::before {
+    background: #facc15;
+    width: 4px;
+  }
+
+  /* PANEL */
+  /* PANEL ULTRA CORPORATIVO */
+  .content-box {
+    position: relative;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 2.5rem;
+    overflow: hidden;
+    min-height: 200px;
+
+    /* profundidad */
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    /* borde sutil premium */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* glow dinámico */
+  .content-box::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+      circle,
+      rgba(250, 204, 21, 0.15),
+      transparent 70%
+    );
+    top: -100px;
+    right: -100px;
+    pointer-events: none;
+    transition: all 0.5s ease;
+  }
+
+  /* CONTENIDO */
+  .content {
+    position: absolute;
+    inset: 0;
+    padding: 2.5rem;
+
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+
     transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
+      opacity 0.45s ease,
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
   }
 
-  .card-container {
+  /* ACTIVO */
+  .content.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    z-index: 2;
+  }
+
+  /* ICONO PRO */
+  /* contenedor */
+  .icon {
+    width: 48px;
+    height: 48px;
+
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: center;
+
+    border-radius: 12px;
+    background: rgba(250, 204, 21, 0.1);
+    border: 1px solid rgba(250, 204, 21, 0.25);
   }
 
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  /* 🔥 NORMALIZA TODOS LOS ICONOS */
+  .icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+
+    /* opcional: los deja todos amarillos */
+    filter: brightness(0) saturate(100%) invert(84%) sepia(54%) saturate(600%)
+      hue-rotate(350deg);
   }
 
-  .icon {
-    font-size: 28px;
-    margin-bottom: 15px;
+  .content.active .icon {
+    transform: scale(1);
+    opacity: 1;
   }
 
-  .card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+  /* TEXTO */
+  .content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 520px;
+    color: #cbd5f5;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
   }
 
-  .card p {
-    color: #555;
-    font-size: 0.85rem;
-    line-height: 1.5;
+  .content.active p {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  /* 📱 Responsive */
+  /* MOBILE */
   @media (max-width: 768px) {
-    .grid {
+    .why-wrapper {
       grid-template-columns: 1fr;
     }
 
-    .header h2 {
-      font-size: 1.6rem;
+    .sidebar {
+      flex-direction: row;
+      overflow-x: auto;
+      border-left: none;
+      border-bottom: 2px solid #eee;
+    }
+
+    .item {
+      white-space: nowrap;
+    }
+
+    .item::before {
+      display: none;
+    }
+
+    .content-box {
+      margin-top: 20px;
     }
   }
 </style>
+
+<script client:load>
+  const section = document.querySelector(".why");
+
+  const items = section.querySelectorAll(".item");
+  const contents = section.querySelectorAll(".content");
+
+  function setActive(index) {
+    items.forEach((el) => el.classList.remove("active"));
+    contents.forEach((el) => el.classList.remove("active"));
+
+    items[index]?.classList.add("active");
+    contents[index]?.classList.add("active");
+  }
+
+  /* eventos */
+  items.forEach((item, i) => {
+    item.addEventListener("mouseenter", () => setActive(i));
+    item.addEventListener("click", () => setActive(i));
+  });
+
+  /* INIT */
+  setActive(0);
+</script>
