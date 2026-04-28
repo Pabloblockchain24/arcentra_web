@@ -1,13 +1,13 @@
 <section class="why">
   <div class="container">
     <div class="header">
-      <h2>¿Por qué Arcentra?</h2>
+      <h2 class="why-title">¿Por qué Arcentra?</h2>
     </div>
 
     <div class="why-wrapper">
       <!-- SIDEBAR -->
       <div class="sidebar">
-        <div class="item active">Control total de tu carga</div>
+        <div class="item active">Control total</div>
         <div class="item">Capacidad operativa</div>
         <div class="item">Experiencia</div>
         <div class="item">Atención personalizada</div>
@@ -87,6 +87,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: stretch;
+    padding: 0 1rem;
   }
 
   /* SIDEBAR */
@@ -226,7 +227,7 @@
 
   /* TEXTO */
   .content p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.7;
     max-width: 520px;
     color: #cbd5f5;
@@ -247,6 +248,18 @@
       grid-template-columns: 1fr;
     }
 
+    .why-title {
+      font-size: 1.7rem !important;
+    }
+
+    .header{
+      margin-bottom: 2rem;
+    }
+
+    .content-box{
+      margin-top: 0;
+    }
+
     .sidebar {
       flex-direction: row;
       overflow-x: auto;
@@ -265,6 +278,12 @@
     .content-box {
       margin-top: 20px;
     }
+
+    .content p {
+    font-size: 0.9rem;
+  }
+
+
   }
 </style>
 
