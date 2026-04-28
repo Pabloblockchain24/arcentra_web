@@ -52,9 +52,7 @@
           <div class="icon">
             <img src="/icon/phone-call.png" alt="phone" />
           </div>
-          <p>
-            Atención personalizada 24/7, 365 dias. 
-          </p>
+          <p>Atención personalizada 24/7, 365 dias.</p>
         </div>
       </div>
     </div>
@@ -95,8 +93,7 @@
     display: flex;
     flex-direction: column;
     border-left: 2px solid #eee;
-      overflow-x: hidden;
-
+    overflow-x: hidden;
   }
 
   .item {
@@ -254,40 +251,47 @@
       font-size: 1.7rem !important;
     }
 
-    .header{
+    .header {
       margin-bottom: 2rem;
     }
 
-    .content-box{
+    .content-box {
       margin-top: 0;
     }
 
     .sidebar {
       flex-direction: row;
-      overflow-x: hidden;
       border-left: none;
       border-bottom: 2px solid #eee;
+      overflow-x: auto; /* 🔥 permite scroll */
+      -webkit-overflow-scrolling: touch; /* 🔥 scroll suave en iOS */
+
+      /* 🔥 ocultar scrollbar */
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE y Edge antiguo */
+      scroll-snap-type: x mandatory;
+    }
+    .sidebar::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
     }
 
     .item {
       white-space: nowrap;
       font-size: 0.8rem;
+      scroll-snap-align: start;
     }
 
     .item::before {
       display: none;
     }
 
-
     .content-box {
       margin-top: 0px;
     }
 
     .content p {
-    font-size: 0.9rem;
-  }
-
-
+      font-size: 0.9rem;
+    }
   }
 </style>
 
