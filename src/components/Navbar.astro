@@ -29,159 +29,154 @@
 
 <style>
 .navbar {
-  position: fixed; /* 🔥 clave */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: transparent; /* 🔥 sobre la imagen */
+  background: transparent;
   color: white;
-  padding: 15px 20px;
+  padding: 20px 15px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
-/* efecto al hacer scroll (opcional pero PRO) */
 .navbar.scrolled {
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
 }
 
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* LINKS DESKTOP */
+.links {
+  display: flex;
+  align-items: center;
+}
+
+.links a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.cta {
+  background: #facc15;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.cta.mobile {
+  display: none;
+  margin-top: 15px;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 10px 20px;
   }
 
   .logo img {
-    height: 50px;
+    height: 45px;
   }
 
-  /* LINKS DESKTOP */
-  .links {
+  .hamburger {
     display: flex;
-    align-items: center;
+  }
+
+  .cta.desktop {
+    display: none;
+  }
+
+  .links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #111;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+
+    opacity: 0;
+    transform: translateY(-12px);
+    visibility: hidden;
+
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+
+  .links.active {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
   }
 
   .links a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-    font-size: 0.95rem;
-  }
-
-  /* CTA */
-  .cta {
-    background: #facc15;
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
+    margin: 10px 0;
+    width: 100%;
   }
 
   .cta.mobile {
-    display: none;
-    margin-top: 15px;
-  }
-
-  /* HAMBURGER */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .hamburger span {
-    width: 25px;
-    height: 3px;
-    background: white;
     display: block;
-    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
   }
-
-  /* 📱 MOBILE */
-  @media (max-width: 768px) {
-
-    .hamburger {
-      display: flex;
-    }
-
-    .cta.desktop {
-      display: none;
-    }
-
-    .links {
-      position: absolute;
-      top: 70px;
-      left: 0;
-      width: 100%;
-      background: #111;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 20px;
-
-      /* 🔥 TRANSICIÓN PREMIUM */
-      opacity: 0;
-      transform: translateY(-12px);
-      visibility: hidden;
-
-      transition: 
-        transform 0.25s ease,
-        opacity 0.2s ease;
-    }
-
-    .links.active {
-      opacity: 1;
-      transform: translateY(0);
-      visibility: visible;
-    }
-
-    /* ✨ ANIMACIÓN LINKS (extra pro) */
-    .links a {
-      margin: 10px 0;
-      width: 100%;
-      opacity: 0;
-      transform: translateY(-6px);
-      transition: all 0.2s ease;
-    }
-
-    .links.active a {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .links.active a:nth-child(1) { transition-delay: 0.05s; }
-    .links.active a:nth-child(2) { transition-delay: 0.1s; }
-    .links.active a:nth-child(3) { transition-delay: 0.15s; }
-    .links.active a:nth-child(4) { transition-delay: 0.2s; }
-
-    .cta.mobile {
-      display: block;
-      width: 100%;
-      text-align: center;
-    }
-  }
+}
 </style>
 
 <script client:load>
   const hamburger = document.getElementById("hamburger");
   const menu = document.getElementById("menu");
+  const navbar = document.querySelector(".navbar");
 
+  // abrir/cerrar menú
   hamburger.addEventListener("click", () => {
     menu.classList.toggle("active");
   });
-</script>
 
-<script client:load>
-  const navbar = document.querySelector(".navbar");
+  // 🔥 cerrar al hacer click en cualquier link
+  menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("active");
+    });
+  });
 
+  // efecto scroll navbar
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       navbar.classList.add("scrolled");
