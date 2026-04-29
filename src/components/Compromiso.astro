@@ -123,10 +123,11 @@
     font-weight: 700 !important;
   }
 
-  .item.active {
-    color: #111;
-    font-weight: 600;
-  }
+.item.active {
+  background: #facc15;
+  color: #111;
+  font-weight: 700;
+}
 
   .item.active::before {
     background: #facc15;
@@ -282,6 +283,7 @@
       scroll-snap-align: start;
     }
 
+
     .item::before {
       display: none;
     }
@@ -303,19 +305,21 @@
   const contents = section.querySelectorAll(".content");
 
   function setActive(index) {
-    items.forEach((el) => el.classList.remove("active"));
-    contents.forEach((el) => el.classList.remove("active"));
+    items.forEach(el => el.classList.remove("active"));
+    contents.forEach(el => el.classList.remove("active"));
 
-    items[index]?.classList.add("active");
-    contents[index]?.classList.add("active");
+    items[index].classList.add("active");
+    contents[index].classList.add("active");
   }
+
+  /* 🔥 FORZAR SIEMPRE EL PRIMERO */
+  requestAnimationFrame(() => {
+    setActive(0);
+  });
 
   /* eventos */
   items.forEach((item, i) => {
     item.addEventListener("mouseenter", () => setActive(i));
     item.addEventListener("click", () => setActive(i));
   });
-
-  /* INIT */
-  setActive(0);
 </script>
