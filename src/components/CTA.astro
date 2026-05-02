@@ -9,14 +9,17 @@
     <div class="grid">
 
       <!-- FORMULARIO -->
-<form class="form" id="contactForm">
-  <input type="text" name="nombre" placeholder="Nombre" required />
-  <input type="email" name="email" placeholder="Email" required />
-  <input type="text" name="telefono" placeholder="Teléfono" />
-  <textarea name="descripcion" placeholder="Detalles del servicio" rows="4"></textarea>
+      <form class="form" id="contactForm">
+        <input type="text" name="nombre" placeholder="Nombre" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="text" name="telefono" placeholder="Teléfono" />
+        <textarea name="descripcion" placeholder="Detalles del servicio" rows="4"></textarea>
 
-  <button type="submit">Enviar solicitud</button>
-</form>
+        <button type="submit" id="submitBtn">Enviar solicitud</button>
+
+        <!-- Mensaje -->
+        <p id="formMessage" class="form-message"></p>
+      </form>
 
       <!-- CONTACTO DIRECTO -->
       <div class="info">
@@ -64,7 +67,6 @@
 
   .header p {
     color: #555;
-
   }
 
   .grid {
@@ -97,11 +99,30 @@
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
-
-
+    transition: all 0.2s ease;
   }
+
   .form button:hover {
     background: #111;
+  }
+
+  .form button:disabled {
+    background: #999;
+    cursor: not-allowed;
+  }
+
+  /* MENSAJE */
+  .form-message {
+    font-size: 0.9rem;
+    min-height: 18px;
+  }
+
+  .form-message.success {
+    color: #16a34a;
+  }
+
+  .form-message.error {
+    color: #dc2626;
   }
 
   /* INFO */
@@ -127,7 +148,6 @@
 
   .whatsapp:hover {
     background: #25d365;
-
   }
 
   /* 📱 Responsive */
@@ -136,30 +156,33 @@
       grid-template-columns: 1fr;
     }
 
-    .header p{
+    .header p {
       font-size: 0.9rem;
     }
 
-    .header-cta {
-      font-size: 1.9rem;
-    }
-
-    .form input{
+    .form input {
       font-size: 0.85rem;
     }
 
     .info a, .info p {
       font-size: 0.9rem;
     } 
-
   }
 </style>
 
 <script client:load>
   const form = document.getElementById("contactForm");
+  const button = document.getElementById("submitBtn");
+  const message = document.getElementById("formMessage");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    // Estado loading
+    button.disabled = true;
+    button.textContent = "Enviando...";
+    message.textContent = "";
+    message.className = "form-message";
 
     const data = {
       nombre: form.nombre.value,
@@ -167,6 +190,7 @@
       telefono: form.telefono.value,
       descripcion: form.descripcion.value,
     };
+
     try {
       const res = await fetch("https://arcentra-back.vercel.app/api/send-mail", {
         method: "POST",
@@ -177,14 +201,22 @@
       });
 
       if (res.ok) {
-        alert("✅ Mensaje enviado correctamente");
+        message.textContent = "✅ Solicitud enviada correctamente. Te contactaremos pronto.";
+        message.classList.add("success");
         form.reset();
       } else {
-        alert("❌ Error al enviar");
+        message.textContent = "❌ No pudimos enviar tu solicitud. Por favor, escríbenos al WhatsApp.";
+        message.classList.add("error");
       }
+
     } catch (error) {
       console.error(error);
-      alert("❌ Error de conexión con el servidor");
+      message.textContent = "❌ Error de conexión. Intenta más tarde.";
+      message.classList.add("error");
     }
+
+    // Restaurar botón
+    button.disabled = false;
+    button.textContent = "Enviar solicitud";
   });
 </script>
