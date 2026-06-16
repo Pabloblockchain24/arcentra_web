@@ -12,13 +12,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 
       <!-- TEXTO -->
       <div class="hero-content">
-        <h1>Logística que no falla</h1>
-
-
+        <h1>Logística a tu medida</h1>
                 <!-- 🔥 PROPUESTA DE VALOR -->
         <div class="value-box">
           <p>
-            Centralizamos la operación logística en puerto —desde el retiro de contenedores hasta la entrega final— eliminando sobrecostos, mejorando eficiencia operativa y garantizando control total de la carga en cada etapa.
+            Centralizamos tu operación logística —desde el retiro de contenedores hasta la entrega final— eliminando sobrecostos, mejorando eficiencia operativa y garantizando control total de la carga en cada etapa.
           </p>
         </div>
 
@@ -37,13 +35,13 @@ import MainLayout from "../layouts/MainLayout.astro";
         </div>
 
         <div class="stat">
-          <span>10.000 m²</span>
+          <span>10.000+ m²</span>
           <p>Capacidad</p>
         </div>
 
         <div class="stat">
           <span>24/7</span>
-          <p>Monitoreo</p>
+          <p>Control</p>
         </div>
       </div>
 
@@ -82,14 +80,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 0 20px;
+  padding: 3rem 1rem;
   font-family: 'Montserrat', sans-serif;
 }
 
 /* HERO */
 .hero {
   position: relative;
-  padding: 140px 20px;
+  padding: 8rem 2rem;
   background: url("/hero.png") center/cover no-repeat;
   color: white;
 }
@@ -108,11 +106,14 @@ import MainLayout from "../layouts/MainLayout.astro";
   gap: 50px;
   align-items: center;
 }
+.hero-content {
+  width: 90%;
+}
 
 /* TEXT */
 .hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 25px;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .intro {
@@ -128,9 +129,7 @@ import MainLayout from "../layouts/MainLayout.astro";
   padding: 20px;
   border-radius: 10px;
   max-width: 520px;
-
   backdrop-filter: blur(6px);
-
   position: relative;
 }
 
@@ -149,8 +148,9 @@ import MainLayout from "../layouts/MainLayout.astro";
 .value-box p {
   margin: 0;
   color: #f9fafb;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   line-height: 1.6;
+ 
 }
 
 /* CTA */
@@ -172,14 +172,14 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 .stat {
   background: rgba(255,255,255,0.05);
-  padding: 20px;
+  padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
   backdrop-filter: blur(6px);
 }
 
 .stat span {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #facc15;
   font-weight: bold;
 }
@@ -221,31 +221,220 @@ import MainLayout from "../layouts/MainLayout.astro";
   color: #555;
 }
 
-/* MOBILE */
+/* =========================
+   ≤ 1200px
+========================= */
+@media (max-width: 1200px) {
+  .hero {
+    padding: 8rem 4rem;
+  }
+  .hero-content {
+    width: 85%;
+  }
+
+  .hero-grid {
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .split {
+    padding: 90px 20px;
+  }
+
+  .split-grid {
+    gap: 50px;
+  }
+
+  .stat{
+    padding: 1.25rem;
+  }
+
+.stat span {
+  font-size: 1.4rem;
+
+}
+
+.stat p {
+  font-size: 0.75rem;
+}
+
+
+}
+
+/* =========================
+   ≤ 992px
+========================= */
+@media (max-width: 992px) {
+  .hero {
+    padding: 8rem 2rem;
+  }
+
+  .hero-grid {
+    gap: 35px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .value-box {
+    max-width: 100%;
+    padding: 18px;
+  }
+
+  .value-box p {
+    font-size: 0.8rem;
+  }
+
+  .stat {
+    padding: 18px;
+  }
+
+  .stat span {
+    font-size: 1.2rem;
+  }
+
+  .stat p {
+    font-size: 0.8rem;
+  }
+
+  .split {
+    padding: 80px 20px;
+  }
+
+  .split-grid {
+    gap: 40px;
+  }
+
+  .text h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* =========================
+   ≤ 768px
+========================= */
 @media (max-width: 768px) {
+  .hero-content{
+    width: 100%;
+  }
 
   .hero {
-    padding: 120px 20px 80px;
+    padding: 6rem 2rem 5rem;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-content {
+    text-align: center;
   }
 
   .hero-content h1 {
     font-size: 2rem;
   }
 
+  .value-box {
+    margin: 0 auto;
+  }
+
   .hero-stats {
     grid-template-columns: 1fr 1fr;
   }
 
-  .value-box {
-    font-size: 0.9rem;
+  .split {
+    padding: 70px 20px;
   }
 
   .split-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .image {
+    order: 1;
+  }
+
+  .text {
+    order: 2;
+    text-align: center;
+  }
+
+  .text h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================
+   ≤ 576px
+========================= */
+@media (max-width: 576px) {
+  .container {
+    padding: 2rem 0;
+    width: 85%;
+
+  }
+
+  .hero {
+    padding: 100px 0 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .value-box {
+    padding: 16px;
+  }
+
+  .value-box::before {
+    width: 3px;
+  }
+
+  .value-box p {
+    font-size: 0.8rem;
+    line-hight: 1.6;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stat {
+    padding: 0.5rem;
+  }
+
+  .stat span {
+    font-size: 1.1rem;
+  }
+
+  .stat p {
+    font-size: 0.75rem;
+  }
+
+  .split {
+    padding: 4rem 0;
+  }
+
+  .text h2 {
+    font-size: 1.35rem;
+  }
+
+  .text p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .cta {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
   }
 }
 </style>
