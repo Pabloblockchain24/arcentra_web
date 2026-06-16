@@ -50,29 +50,87 @@ import MainLayout from "../layouts/MainLayout.astro";
 
   <!-- BLOQUE VISUAL -->
   <section class="split">
-    <div class="container split-grid">
+  <div class="container split-grid">
+    <div class="gallery">
+      <div class="main-image">
+        <img
+          src="/entregas.jpeg"
+          alt="Operación logística Arcentra"
+        />
 
-      <div class="image">
-        <img src="/entregas.jpeg" alt="operación arcentra">
+        <div class="floating-card">
+          <span>32+</span>
+          <p>Años movilizando cargas a lo largo de todo Chile</p>
+        </div>
+
       </div>
 
-      <div class="text">
-        <h2>Nos integramos a tu operación</h2>
+      <div class="side-images">
 
-        <p>
-          No solo transportamos carga. Nos involucramos en la operación completa
-          para asegurar continuidad, visibilidad y cumplimiento en cada etapa.
-        </p>
+        <img
+          src="/Reefer.png"
+          alt="Transporte de carga"
+        />
 
-        <p>
-          Anticipamos problemas, optimizamos tiempos y ejecutamos con estándar
-          profesional en terreno.
-        </p>
+        <img
+          src="/vacios.jpg"
+          alt="Operación logística"
+        />
 
-        <a href="/#cotizar" class="cta">Solicitar cotización</a>
       </div>
+
     </div>
-  </section>
+
+    <div class="text">
+
+      <span class="tag">
+        NOSOTROS
+      </span>
+
+      <h2>
+        Nos integramos a tu operación logística
+      </h2>
+
+      <p>
+        No solo transportamos carga. Nos convertimos en una extensión de tu
+        operación para asegurar continuidad, trazabilidad y cumplimiento
+        desde el puerto hasta la entrega final.
+      </p>
+
+      <p>
+        Coordinamos recursos, anticipamos contingencias y ejecutamos con
+        estándares que permiten a nuestros clientes enfocarse en hacer crecer
+        su negocio.
+      </p>
+
+      <div class="features">
+
+        <div class="feature">
+          ✓ Control operacional
+        </div>
+
+        <div class="feature">
+          ✓ Trazabilidad completa
+        </div>
+
+        <div class="feature">
+          ✓ Capacidad escalable
+        </div>
+
+        <div class="feature">
+          ✓ Respuesta rápida
+        </div>
+
+      </div>
+
+      <a href="/#cotizar" class="cta">
+        Solicitar cotización
+      </a>
+
+    </div>
+
+  </div>
+</section>
 
 </MainLayout>
 
@@ -157,10 +215,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 .cta {
   background: #facc15;
   color: black;
-  padding: 12px 22px;
+  padding: 0.75rem 1.5rem;
   text-decoration: none;
   font-weight: bold;
   border-radius: 6px;
+  font-size: 0.9rem;
 }
 
 /* STATS */
@@ -191,34 +250,124 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 /* SPLIT */
 .split {
-  padding: 100px 20px;
-
-  a{
-    display: inline-block;
-    margin-top: 20px;
-  }
+  padding: 2rem 1rem;
+  background: #fafafa;
 }
 
 .split-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 5rem;
+  align-items: start;
 }
 
-.image img {
+/* GALERÍA */
+
+.gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.main-image {
+  position: relative;
+}
+
+.main-image img,
+.side-images img {
   width: 100%;
-  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.main-image img {
+  height: 560px;
+}
+
+.side-images {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px;
+}
+
+.side-images img {
+  height: 271px;
+}
+
+/* TARJETA */
+
+.floating-card {
+  position: absolute;
+  left: 30px;
+  right: 10px;
+  bottom: 20px;
+  background: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.5);
+}
+
+.floating-card span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f7c708;
+}
+
+.floating-card p {
+  margin-top: 5px;
+  font-size: .8rem;
+  color: #000000;
+}
+
+/* TEXTO */
+
+.tag {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #facc15;
 }
 
 .text h2 {
-  margin-bottom: 20px;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .text p {
-  margin-bottom: 15px;
   color: #555;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: .9rem;
+}
+
+/* BENEFICIOS */
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.feature {
+  background: rgb(228, 228, 228);
+  padding: 14px;
+  border-radius: 10px;
+  font-size: .85rem;
+  font-weight: 600;
+  box-shadow:
+    0 3px 12px rgba(0,0,0,.05);
+}
+
+/* CTA */
+
+.text .cta {
+  display: inline-block;
+  margin-top: 2rem;
 }
 
 /* =========================
@@ -240,12 +389,20 @@ import MainLayout from "../layouts/MainLayout.astro";
     font-size: 1.7rem;
   }
 
-  .split {
-    padding: 90px 20px;
+   .split-grid {
+    gap: 3rem;
   }
 
-  .split-grid {
-    gap: 50px;
+  .text h2 {
+    font-size: 2rem;
+  }
+
+  .main-image img {
+    height: 500px;
+  }
+
+  .side-images img {
+    height: 241px;
   }
 
   .stat{
@@ -301,16 +458,31 @@ import MainLayout from "../layouts/MainLayout.astro";
     font-size: 0.8rem;
   }
 
-  .split {
-    padding: 80px 20px;
+   .split-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
-  .split-grid {
-    gap: 40px;
+  .gallery {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  .features {
+    max-width: 700px;
+    margin: 2rem auto 0;
+  }
+
+  .text .cta {
+    margin-top: 2rem;
   }
 
   .text h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -347,26 +519,33 @@ import MainLayout from "../layouts/MainLayout.astro";
     grid-template-columns: 1fr 1fr;
   }
 
-  .split {
-    padding: 70px 20px;
+   .split {
+    padding: 5rem 1.5rem;
   }
 
-  .split-grid {
+  .gallery {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
 
-  .image {
-    order: 1;
+  .side-images {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
   }
 
-  .text {
-    order: 2;
-    text-align: center;
+  .main-image img {
+    height: 420px;
+  }
+
+  .side-images img {
+    height: 220px;
   }
 
   .text h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -419,22 +598,46 @@ import MainLayout from "../layouts/MainLayout.astro";
   }
 
   .split {
-    padding: 4rem 0;
+    padding: 4rem 1rem;
+  }
+
+  .main-image img {
+    height: 320px;
+  }
+
+  .side-images {
+    grid-template-columns: 1fr;
+  }
+
+  .side-images img {
+    height: 180px;
+  }
+
+  .floating-card {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .floating-card span {
+    font-size: 1.5rem;
   }
 
   .text h2 {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
 
   .text p {
-    font-size: 0.9rem;
-    line-height: 1.7;
+    font-size: .95rem;
   }
 
-  .cta {
+  .feature {
+    text-align: left;
+  }
+
+  .text .cta {
     width: 100%;
     text-align: center;
-    padding: 14px;
   }
 }
 </style>
