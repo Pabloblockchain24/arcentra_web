@@ -1,6 +1,5 @@
 <nav class="navbar">
   <div class="container">
-    
     <!-- LOGO -->
     <a href="/" class="logo">
       <img src="/Arcentralogo.png" alt="Arcentra" />
@@ -17,146 +16,202 @@
     <div class="links" id="menu">
       <a href="/#servicios">SERVICIOS</a>
       <a href="/nosotros">NOSOTROS</a>
-      <a href="https://arcentra-portal.vercel.app/" target="_blank">PORTAL CLIENTES</a>
-      <a class="cta mobile" href="/#cotizar">COTIZAR</a>
+      <a href="https://arcentra-portal.vercel.app/" target="_blank"
+        >PORTAL CLIENTES</a
+      >
+      <a class="cta_mobile" href="/#cotizar">COTIZAR</a>
     </div>
 
     <!-- CTA DESKTOP -->
     <a class="cta desktop" href="/#cotizar">COTIZAR</a>
-
   </div>
 </nav>
 
 <style>
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: transparent;
-  color: white;
-  padding: 20px 15px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    color: white;
+    padding: 1.5rem 5rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
 
-.navbar.scrolled {
-  background: rgba(0, 0, 0, 0.85);
+  .navbar.scrolled {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+  }
+  .navbar.menu-open {
+      background: #111;
   backdrop-filter: blur(8px);
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo img {
-  height: 50px;
-}
-
-/* LINKS DESKTOP */
-.links {
-  display: flex;
-  align-items: center;
-}
-
-.links a {
-  margin: 0 15px;
-  color: white;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.cta {
-  background: #facc15;
-  color: black;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-.cta.mobile {
-  display: none;
-  margin-top: 15px;
-}
-
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  display: block;
-  transition: all 0.3s ease;
-}
-
-/* 📱 MOBILE */
-@media (max-width: 768px) {
-
-  .navbar {
-    padding: 10px 35px;
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .logo img {
     height: 45px;
   }
 
-  .hamburger {
-    display: flex;
-  }
-
-  .cta.desktop {
-    display: none;
-  }
-
+  /* LINKS DESKTOP */
   .links {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #111;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-
-    opacity: 0;
-    transform: translateY(-12px);
-    visibility: hidden;
-
-    transition: transform 0.25s ease, opacity 0.2s ease;
-  }
-
-  .links.active {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
+    display: flex;
+    align-items: center;
   }
 
   .links a {
-    margin: 10px 0;
-    width: 100%;
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
   }
 
-  .cta.mobile {
-    display: block;
-    width: 100%;
-    text-align: center;
+  .cta {
+    background: #facc15;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 0.95rem;
   }
-}
+
+  .cta_mobile {
+    display: none;
+    margin-top: 15px;
+  }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 2px;
+    background: white;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 1200px) {
+    .navbar {
+      padding: 1.5rem 5rem;
+    }
+
+    .links a {
+      font-size: 0.85rem;
+    }
+
+    .cta {
+      font-size: 0.9rem;
+    }
+    .logo img {
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .navbar {
+      padding: 2rem 4rem;
+    }
+
+    .links a {
+      font-size: 0.8rem;
+      margin: 0 10px;
+    }
+
+    .cta {
+      font-size: 0.85rem;
+    }
+  }
+
+  /* 📱 MOBILE */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 2rem 5rem;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .cta.desktop {
+      display: none;
+    }
+
+    .links {
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      width: 100%;
+      background: #111;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+
+      opacity: 0;
+      transform: translateY(-12px);
+      visibility: hidden;
+
+      transition:
+        transform 0.25s ease,
+        opacity 0.2s ease;
+    }
+
+    .links.active {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    .links a {
+      margin: 8px 0;
+      width: 100%;
+      font-size: 0.75rem;
+    }
+
+    .cta_mobile {
+      display: block;
+      width: 100%;
+      text-align: center;
+        background: #facc15;
+      color: black !important;
+      padding: 10px 0;
+      font-weight: bold;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+
+  }
+
+  @media (max-width: 576px) {
+    .navbar {
+      padding: 1.25rem 2rem;
+    }
+        .logo img {
+      height: 40px;
+    }
+  }
 </style>
 
 <script client:load>
@@ -165,16 +220,18 @@
   const navbar = document.querySelector(".navbar");
 
   // abrir/cerrar menú
-  hamburger.addEventListener("click", () => {
-    menu.classList.toggle("active");
-  });
+hamburger.addEventListener("click", () => {
+  menu.classList.toggle("active");
+  navbar.classList.toggle("menu-open");
+});
 
   // 🔥 cerrar al hacer click en cualquier link
-  menu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("active");
-    });
+menu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("active");
+    navbar.classList.remove("menu-open");
   });
+});
 
   // efecto scroll navbar
   window.addEventListener("scroll", () => {
