@@ -1,11 +1,14 @@
 ---
+
 ---
 
 <section class="services" id="servicios">
   <div class="container">
     <div class="header">
       <h2>Nuestros servicios</h2>
-      <p>Soluciones logísticas diseñadas para que tu operación nunca se detenga.</p>
+      <p>
+        Soluciones logísticas diseñadas para que tu operación nunca se detenga.
+      </p>
     </div>
 
     <div class="carousel">
@@ -13,25 +16,28 @@
 
       <div class="viewport">
         <div class="track" id="track">
-
           <!-- CARDS -->
 
-                    <div class="card">
+          <div class="card">
             <img src="/desconsolidado.jpeg" />
             <div class="content">
               <h3>Desconsolidado/Consolidado</h3>
-              <p>Contamos con un equipo especializado en todo tipo de desconsolidado de carga.</p>
+              <p>
+                Contamos con un equipo especializado en todo tipo de
+                desconsolidado de carga.
+              </p>
               <a href="/#cotizar" class="cta">Cotizar →</a>
             </div>
           </div>
 
-
-
-                    <div class="card">
+          <div class="card">
             <img src="/entregas.jpeg" />
             <div class="content">
               <h3>Transporte de carga</h3>
-              <p>Movilizamos tu carga con puntualidad, seguridad y trazabilida en todo momento.</p>
+              <p>
+                Movilizamos tu carga con puntualidad, seguridad y trazabilida en
+                todo momento.
+              </p>
               <a href="/#cotizar" class="cta">Cotizar →</a>
             </div>
           </div>
@@ -45,7 +51,6 @@
             </div>
           </div>
 
-          
           <div class="card">
             <img src="/almacenamiento.jpg" />
             <div class="content">
@@ -55,12 +60,13 @@
             </div>
           </div>
 
-
           <div class="card">
             <img src="/vacios.jpg" />
             <div class="content">
               <h3>Entrega/Devolución de Vacíos</h3>
-              <p>Gestión eficiente de retiro y devolución de contenedores vacíos.</p>
+              <p>
+                Gestión eficiente de retiro y devolución de contenedores vacíos.
+              </p>
               <a href="/#cotizar" class="cta">Cotizar →</a>
             </div>
           </div>
@@ -69,7 +75,10 @@
             <img src="/Reefer.png" />
             <div class="content">
               <h3>Operaciones Reefer</h3>
-              <p>Contamos con equipos especializados en el manejo de carga refrigerada.</p>
+              <p>
+                Contamos con equipos especializados en el manejo de carga
+                refrigerada.
+              </p>
               <a href="/#cotizar" class="cta">Cotizar →</a>
             </div>
           </div>
@@ -83,305 +92,506 @@
 </section>
 
 <style is:global>
-#servicios {
-  scroll-margin-top: 40px;
-}
+  #servicios {
+    scroll-margin-top: 40px;
+  }
 
-.services {
-  padding: 5rem 2rem;
-  background: radial-gradient(circle at 50% 0%, #1e293b, #020617);
-  font-family: "Montserrat", sans-serif;
-}
+  .services {
+    padding: 5rem 2rem;
+    background: radial-gradient(circle at 50% 0%, #1e293b, #020617);
+    font-family: "Montserrat", sans-serif;
+  }
 
-.container {
-  max-width: 1200px;
-  height: 100%;
-  margin: auto;
-}
+  .container {
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+  }
 
-.header {
-  text-align: center;
-  margin-bottom: 60px;
-}
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
 
-.header h2 {
-  color: white;
-  font-size: 1.9rem;
-}
+  .header h2 {
+    color: white;
+    font-size: 1.8rem;
+  }
 
-.header p {
-  color: #94a3b8;
-}
+  .header p {
+    color: #94a3b8;
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
 
-/* CAROUSEL */
-.carousel {
-  position: relative;
-}
+  /* CAROUSEL */
+  .carousel {
+    position: relative;
+  }
 
-.viewport {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
+  .viewport {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
 
-/* efecto fade lateral */
-.viewport::before,
-.viewport::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 120px;
-  height: 100%;
-  z-index: 5;
-  pointer-events: none;
-}
-/* TRACK */
-.track {
-  display: flex;
-  gap: 30px;
-  transition: transform .7s cubic-bezier(.22,1,.36,1);
-  will-change: transform;
-}
+  /* efecto fade lateral */
+  .viewport::before,
+  .viewport::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+  }
+  /* TRACK */
+  .track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
 
-/* CARD */
-.card {
-  width: 300px;
-  flex: 0 0 auto;
-  overflow: hidden;
-  background: #fff;
-  transform: scale(.7);
-  opacity: .15;
-  filter: blur(6px);
+  /* CARD */
+  .card {
+    width: 300px;
+    flex: 0 0 auto;
+    overflow: hidden;
+    background: #fff;
+    transform: scale(0.7);
+    opacity: 0.15;
+    filter: blur(6px);
 
-  transition: 
-    transform .6s cubic-bezier(.22,1,.36,1),
-    opacity .5s ease,
-    filter .5s ease;
+    transition:
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.5s ease,
+      filter 0.5s ease;
 
-    h3{
+    h3 {
       font-size: 0.9rem;
       margin-bottom: 10px;
     }
-    p{
+    p {
       font-size: 0.75rem;
       color: #555;
     }
-    a{
+    a {
       font-size: 0.8rem;
     }
+  }
+
+  .card.active {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+    z-index: 3;
+
+    box-shadow:
+      0 40px 120px rgba(0, 0, 0, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .card.prev,
+  .card.next {
+    transform: scale(0.9);
+    opacity: 0.4;
+    filter: blur(2px);
+    z-index: 2;
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .cta {
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    background: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  /* NAV */
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.75);
+    color: #111;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .prev {
+    left: -15px;
+  }
+  .next {
+    right: -15px;
+  }
+
+  /* DOTS */
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: #555;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    width: 25px;
+    background: white;
+  }
+
+/* =========================
+   ≤ 1200px
+========================= */
+@media (max-width: 1200px) {
+  .services {
+    padding: 4rem 1.5rem;
+  }
+
+  .card {
+    width: 280px;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
 }
 
-.card.active {
-  transform: scale(1);
-  opacity: 1;
-  filter: blur(0);
-  z-index: 3;
+/* =========================
+   ≤ 992px
+========================= */
+@media (max-width: 992px) {
 
-  box-shadow:
-    0 40px 120px rgba(0,0,0,.6),
-    0 0 0 1px rgba(255,255,255,.05);
+  .services {
+    padding: 3rem 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .header h2 {
+    font-size: 1.7rem;
+  }
+
+  .header p {
+    font-size: 0.85rem;
+  }
+
+  .track {
+    gap: 20px;
+  }
+
+  .card {
+    width: 260px;
+
+    h3 {
+      font-size: 0.85rem;
+    }
+
+    p {
+      font-size: 0.72rem;
+    }
+
+    a {
+      font-size: 0.75rem;
+    }
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .content {
+    padding: 18px;
+  }
+
+  .viewport::before,
+  .viewport::after {
+    width: 80px;
+  }
 }
 
-.card.prev,
-.card.next {
-  transform: scale(.9);
-  opacity: .4;
-  filter: blur(2px);
-  z-index: 2;
+/* =========================
+   ≤ 768px
+========================= */
+@media (max-width: 768px) {
+  .services {
+    padding: 2.5rem 1rem;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.8rem;
+  }
+
+  .card {
+    width: 240px;
+  }
+
+  .card img {
+    height: 170px;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .cta {
+    padding: 9px;
+  }
+
+  .nav {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .viewport::before,
+  .viewport::after {
+    width: 40px;
+  }
 }
 
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
+/* =========================
+   ≤ 576px
+========================= */
+@media (max-width: 576px) {
+  .services {
+    padding: 2rem 1rem;
+  }
 
-.content {
-  padding: 20px;
-}
+  .header {
+    margin-bottom: 35px;
+    justify-items: center;
+  }
 
-.cta {
-  display: block;
-  margin-top: 15px;
-  padding: 10px;
-  background: black;
-  color: white;
-  text-align: center;
-  border-radius: 6px;
-  text-decoration: none;
-}
+  .header h2 {
+    font-size: 1.35rem;
+  }
 
-/* NAV */
-.nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.75);
-  color: #111;
-  cursor: pointer;
-  z-index: 10;
-}
+  .header p {
+    font-size: 0.7rem;
+    line-height: 1.25;
+        width: 85%;
 
-.prev { left: -15px; }
-.next { right: -15px; }
+  }
 
-/* DOTS */
-.dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
+  .track {
+    gap: 15px;
+  }
 
-.dot {
-  width: 8px;
-  height: 8px;
-  background: #555;
-  border-radius: 50%;
-  cursor: pointer;
-}
+  .card {
+    width: 220px;
 
-.dot.active {
-  width: 25px;
-  background: white;
+    h3 {
+      font-size: 0.8rem;
+    }
+
+    p {
+      font-size: 0.7rem;
+    }
+
+    a {
+      font-size: 0.72rem;
+    }
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .content {
+    padding: 14px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .viewport::before,
+  .viewport::after {
+    display: none;
+  }
+
+  .dots {
+    margin-top: 15px;
+    gap: 8px;
+  }
+
+  .dot.active {
+    width: 20px;
+  }
 }
 </style>
 
 <script client:load>
-const track = document.getElementById("track");
-const viewport = document.querySelector(".viewport");
-const dotsContainer = document.getElementById("dots");
+  const track = document.getElementById("track");
+  const viewport = document.querySelector(".viewport");
+  const dotsContainer = document.getElementById("dots");
 
-let cards = Array.from(track.children);
-let index = 0;
-let autoplay;
-let userInteracted = false;
+  let cards = Array.from(track.children);
+  let index = 0;
+  let autoplay;
+  let userInteracted = false;
 
-const gap = 30;
+  const gap = 30;
 
-/* CLONES */
-track.appendChild(cards[0].cloneNode(true));
-track.insertBefore(cards[cards.length - 1].cloneNode(true), cards[0]);
+  /* CLONES */
+  track.appendChild(cards[0].cloneNode(true));
+  track.insertBefore(cards[cards.length - 1].cloneNode(true), cards[0]);
 
-const allCards = () => track.querySelectorAll(".card");
+  const allCards = () => track.querySelectorAll(".card");
 
-/* 🔥 CENTRADO PERFECTO */
-function move() {
-  const card = allCards()[index + 1];
-  if (!card) return;
+  /* 🔥 CENTRADO PERFECTO */
+  function move() {
+    const card = allCards()[index + 1];
+    if (!card) return;
 
-  const viewportCenter = viewport.offsetWidth / 2;
-  const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+    const viewportCenter = viewport.offsetWidth / 2;
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
 
-  const offset = cardCenter - viewportCenter;
+    const offset = cardCenter - viewportCenter;
 
-  track.style.transform = `translateX(-${offset}px)`;
+    track.style.transform = `translateX(-${offset}px)`;
 
-  update();
-}
-
-/* UI */
-function update() {
-  allCards().forEach(c => c.classList.remove("active","prev","next"));
-
-  allCards()[index + 1]?.classList.add("active");
-  allCards()[index]?.classList.add("prev");
-  allCards()[index + 2]?.classList.add("next");
-
-  dots.forEach(d => d.classList.remove("active"));
-  dots[index]?.classList.add("active");
-}
-
-/* LOOP */
-track.addEventListener("transitionend", () => {
-  if (index >= cards.length) {
-    track.style.transition = "none";
-    index = 0;
-    move();
+    update();
   }
 
-  if (index < 0) {
-    track.style.transition = "none";
-    index = cards.length - 1;
-    move();
+  /* UI */
+  function update() {
+    allCards().forEach((c) => c.classList.remove("active", "prev", "next"));
+
+    allCards()[index + 1]?.classList.add("active");
+    allCards()[index]?.classList.add("prev");
+    allCards()[index + 2]?.classList.add("next");
+
+    dots.forEach((d) => d.classList.remove("active"));
+    dots[index]?.classList.add("active");
   }
 
-  requestAnimationFrame(() => {
-    track.style.transition = "transform .7s cubic-bezier(.22,1,.36,1)";
+  /* LOOP */
+  track.addEventListener("transitionend", () => {
+    if (index >= cards.length) {
+      track.style.transition = "none";
+      index = 0;
+      move();
+    }
+
+    if (index < 0) {
+      track.style.transition = "none";
+      index = cards.length - 1;
+      move();
+    }
+
+    requestAnimationFrame(() => {
+      track.style.transition = "transform .7s cubic-bezier(.22,1,.36,1)";
+    });
   });
-});
 
-/* DOTS */
-cards.forEach((_, i) => {
-  const dot = document.createElement("div");
-  dot.classList.add("dot");
-  dotsContainer.appendChild(dot);
+  /* DOTS */
+  cards.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    dotsContainer.appendChild(dot);
 
-  dot.onclick = () => {
-    index = i;
+    dot.onclick = () => {
+      index = i;
+      move();
+      stop();
+    };
+  });
+
+  const dots = dotsContainer.querySelectorAll(".dot");
+
+  /* NAV */
+  document.querySelector(".next").onclick = () => {
+    index++;
     move();
     stop();
   };
-});
 
-const dots = dotsContainer.querySelectorAll(".dot");
-
-/* NAV */
-document.querySelector(".next").onclick = () => {
-  index++;
-  move();
-  stop();
-};
-
-document.querySelector(".prev").onclick = () => {
-  index--;
-  move();
-  stop();
-};
-
-/* AUTOPLAY */
-function start() {
-  autoplay = setInterval(() => {
-    if (userInteracted) return;
-    index++;
+  document.querySelector(".prev").onclick = () => {
+    index--;
     move();
-  }, 3500);
-}
+    stop();
+  };
 
-function stop() {
-  userInteracted = true;
-  clearInterval(autoplay);
-}
+  /* AUTOPLAY */
+  function start() {
+    autoplay = setInterval(() => {
+      if (userInteracted) return;
+      index++;
+      move();
+    }, 3500);
+  }
 
-/* DRAG */
-let startX = 0;
-let dragging = false;
+  function stop() {
+    userInteracted = true;
+    clearInterval(autoplay);
+  }
 
-track.addEventListener("pointerdown", e => {
-  dragging = true;
-  startX = e.clientX;
-  stop();
-});
+  /* DRAG */
+  let startX = 0;
+  let dragging = false;
 
-window.addEventListener("pointerup", e => {
-  if (!dragging) return;
-  dragging = false;
+  track.addEventListener("pointerdown", (e) => {
+    dragging = true;
+    startX = e.clientX;
+    stop();
+  });
 
-  const diff = e.clientX - startX;
+  window.addEventListener("pointerup", (e) => {
+    if (!dragging) return;
+    dragging = false;
 
-  if (diff > 50) index--;
-  else if (diff < -50) index++;
+    const diff = e.clientX - startX;
 
-  move();
-});
+    if (diff > 50) index--;
+    else if (diff < -50) index++;
 
-/* INIT */
-window.addEventListener("load", () => {
-  move();
-  start();
-});
+    move();
+  });
+
+  /* INIT */
+  window.addEventListener("load", () => {
+    move();
+    start();
+  });
 </script>
